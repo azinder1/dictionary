@@ -7,29 +7,30 @@ require('./app')
 also_reload('lib/**/*.rb')
 
 get('/') do
+  @words = Word.all()
   erb(:index)
 end
 
 get('/word/new') do
+  @words = Word.all()
   erb(:word_form)
 end
 
-get('/words') do
+get('/') do
   @words = Word.all()
-  erb(:words)
+  erb(:index)
 end
 
-post('/words/') do
+post('/') do
   new_word = Word.new(:word_name => params.fetch('word'))
   new_word.save()
   @words = Word.all()
 
-  erb(:words)
+  erb(:index)
 end
 
-
 get('/word/:id') do
-  @word = Word.find(param.fetch('id').to_i)
+  @word = Word.find(params.fetch('id').to_i)
   @words = Word.all()
-  erb(:words)
+  erb(:word)
 end

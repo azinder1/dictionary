@@ -1,3 +1,9 @@
+Your Words:
 
+<ul>
+<% @words.each() do |word| %>
+  <li><a href="/word/<%=word.id() %>"><%= word.word_name() %></a></li>
+    <% end %>
+</ul>
 
 <p><a href="/word/new">Add a new word</a></p>

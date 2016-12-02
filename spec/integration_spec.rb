@@ -21,4 +21,9 @@ describe('the home path', {:type => :feature}) do
     click_button('Submit')
     expect(page).to have_content('Bananza')
   end
+  it('can follow the word link with a unique id') do
+    visit('/')
+    click_link('Bananza')
+    expect(page).to have_content('Add Definition')
+  end
 end
