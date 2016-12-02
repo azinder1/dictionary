@@ -26,4 +26,15 @@ describe('the home path', {:type => :feature}) do
     click_link('Bananza')
     expect(page).to have_content('Add Definition')
   end
+  it('can add a definition for a unique word') do
+    visit('/word')
+    click_link('Add Definition')
+    expect(page).to have_content('Definition:')
+  end
+  it('can display inputted definition for each entry') do
+    visit('/word/1/definition/new')
+    fill_in('definition', :with => "A fun gathering")
+    click_button('Submit')
+    expect(page).to have_content("A fun gathering")
+  end
 end

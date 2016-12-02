@@ -1,9 +1,9 @@
 class Definition
-  attr_reader(:definition)
+  attr_reader(:definition_sentence)
   @@definitions = []
 
   def initialize(attributes)
-    @definition = attributes.fetch(:definition)
+    @definition_sentence = attributes.fetch(:definition_sentence)
     @id = @@definitions.length + 1
   end
 

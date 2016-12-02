@@ -2,5 +2,15 @@
 
 <div class="word_info">
   <h4><%=@word.word_name()%>:</h4>
-<p><a href="/definition/new">Add Definition</a></p>
+  <ol>
+
+    <% @word.word_definition. each() do |definition| %>
+    <li><%= definition.definition_sentence() %></li>
+    <%end %>
+
+  </ol>
+<p><a href="/word/<%= @word.id() %>/definition/new">Add Definition</a></p>
 </div>
+
+
+<ul>
