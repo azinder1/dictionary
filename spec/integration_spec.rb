@@ -37,6 +37,14 @@ describe('the home path', {:type => :feature}) do
     click_button('Submit')
     expect(page).to have_content("A fun gathering")
   end
+  it('will not display definitions for other words') do
+    visit('/')
+    click_link('Add a new word')
+    fill_in('word', :with => 'Party')
+    click_button('Submit')
+    click_link('Party')
+    expect(page).to have_no_content("A fun gathering")
+  end
   it('can display inputted definitions for multiple entries') do
     visit('/word/1/definition/new')
     fill_in('definition', :with => "Party! Party! Party!")
