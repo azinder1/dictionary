@@ -25,7 +25,7 @@ describe(Word) do
   end
   describe('#add_word_definition') do
     it('will add a words definition to an array') do
-      test_definition = Definition.new(:definition_sentence => "To delibrately sneeze in public to bring attention to onseself")
+      test_definition = Definition.new(:definition_sentence => "To delibrately sneeze in public to bring attention to onseself", :part_of_speech => "verb")
       test_definition.save()
       @word1.add_word_definition(test_definition)
       expect(@word1.word_definition()).to eq([test_definition])

@@ -5,10 +5,10 @@ require('definition')
 describe(Definition) do
   before() do
     Definition.clear()
-    @definition1 = Definition.new(:definition_sentence => "To delibrately sneeze in public to bring attention to onseself")
+    @definition1 = Definition.new(:definition_sentence => "To delibrately sneeze in public to bring attention to onseself", :part_of_speech => "verb")
     @definition1.save()
 
-    @definition2 = Definition.new(:definition_sentence => "An object that is awkward to carry on one's back")
+    @definition2 = Definition.new(:definition_sentence => "An object that is awkward to carry on one's back", :part_of_speech => "noun")
     @definition2.save()
 
   end

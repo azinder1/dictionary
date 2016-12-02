@@ -34,6 +34,7 @@ describe('the home path', {:type => :feature}) do
   it('can display inputted definition for each entry') do
     visit('/word/1/definition/new')
     fill_in('definition', :with => "A fun gathering")
+    select('Noun', :from => 'type')
     click_button('Submit')
     expect(page).to have_content("A fun gathering")
   end
@@ -48,6 +49,7 @@ describe('the home path', {:type => :feature}) do
   it('can display inputted definitions for multiple entries') do
     visit('/word/1/definition/new')
     fill_in('definition', :with => "Party! Party! Party!")
+    select('Noun', :from => 'type')
     click_button('Submit')
     expect(page).to have_content("Party! Party! Party!")
   end

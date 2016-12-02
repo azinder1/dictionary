@@ -44,7 +44,7 @@ end
 post('/word/:id/definition/new') do
   @word = Word.find(params.fetch('id').to_i)
   @words = Word.all()
-  new_definition = Definition.new(:definition_sentence => params.fetch('definition'))
+  new_definition = Definition.new(:definition_sentence => params.fetch('definition'), :part_of_speech => params.fetch('type'))
   new_definition.save()
   @word.add_word_definition(new_definition)
   @definition = Definition.all()

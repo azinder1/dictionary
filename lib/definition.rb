@@ -1,9 +1,10 @@
 class Definition
-  attr_reader(:definition_sentence)
+  attr_reader(:definition_sentence, :part_of_speech)
   @@definitions = []
 
   def initialize(attributes)
     @definition_sentence = attributes.fetch(:definition_sentence)
+    @part_of_speech = attributes.fetch(:part_of_speech)
     @id = @@definitions.length + 1
   end
 

@@ -5,7 +5,7 @@
   <ol>
 
     <% @word.word_definition. each() do |definition| %>
-    <li><%= definition.definition_sentence() %></li>
+    <li>(<%= definition.part_of_speech() %>) <%= definition.definition_sentence() %></li>
     <%end %>
 
   </ol>
