@@ -16,7 +16,7 @@ _Object oriented project to create word and definition classes and apply them to
 
 * _Use localhost:4567 url upon deployment of Sinatra Gem with command line $ ruby app.rb_
 
-_or Heroku Deployment at:https://frozen-beyond-25229.herokuapp.com/ _
+*or Heroku Deployment at:https://frozen-beyond-25229.herokuapp.com/ 
 
 ## Known Bugs
 
