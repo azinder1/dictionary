@@ -15,7 +15,7 @@ describe('the home path', {:type => :feature}) do
     click_link('Add a new word')
     expect(page).to have_content("Word:")
   end
-  it('creates a word objext with user inputted properties') do
+  it('creates a word object with user inputted properties') do
     visit('/word/new')
     fill_in('word', :with => 'Bananza')
     click_button('Submit')
@@ -27,7 +27,7 @@ describe('the home path', {:type => :feature}) do
     expect(page).to have_content('Add Definition')
   end
   it('can add a definition for a unique word') do
-    visit('/word')
+    visit('/word/1')
     click_link('Add Definition')
     expect(page).to have_content('Definition:')
   end
@@ -36,5 +36,11 @@ describe('the home path', {:type => :feature}) do
     fill_in('definition', :with => "A fun gathering")
     click_button('Submit')
     expect(page).to have_content("A fun gathering")
+  end
+  it('can display inputted definitions for multiple entries') do
+    visit('/word/1/definition/new')
+    fill_in('definition', :with => "Party! Party! Party!")
+    click_button('Submit')
+    expect(page).to have_content("Party! Party! Party!")
   end
 end
