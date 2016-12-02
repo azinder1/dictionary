@@ -15,4 +15,10 @@ describe('the home path', {:type => :feature}) do
     click_link('Add a new word')
     expect(page).to have_content("Word:")
   end
+  it('creates a word objext with user inputted properties') do
+    visit('/word/new')
+    fill_in('word', :with => 'Bananza')
+    click_button('Submit')
+    expect(page).to have_content('Bananza')
+  end
 end

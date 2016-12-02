@@ -6,16 +6,16 @@ require('word')
 describe(Word) do
   before() do
     Word.clear()
-    @word1 = Word.new(:word => 'Bananza')
+    @word1 = Word.new(:word_name => 'Bananza')
     @word1.save()
 
-    @word2 = Word.new(:word => 'Quixotic')
+    @word2 = Word.new(:word_name => 'Quixotic')
     @word2.save()
   end
 
   describe('#initialize') do
     it('can retrieve information for a new word') do
-      expect(@word1.word()).to eq('Bananza')
+      expect(@word1.word_name()).to eq('Bananza')
     end
   end
   describe('#find') do
