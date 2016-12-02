@@ -1,7 +1,10 @@
 <a href="/word/<%= @word.id() %>">Back to Word</a>
 <form action="/word/<%= @word.id() %>/definition/new" method="post">
   <h3>Add a new definition</h3>
-  <div class="form group">
+  <div class="form-group">
+    <style type="text/css" scoped>
+        input { width: 600px;; }
+    </style>
     <label for="definition">Definition:</label>
     <input type="text" name="definition" id="definition">
   </div>
