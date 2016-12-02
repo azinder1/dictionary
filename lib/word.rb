@@ -3,7 +3,7 @@ class Word
   @@words = []
 
   def initialize(attributes)
-    @word_name = attributes.fetch(:word_name)
+    @word_name = attributes.fetch(:word_name).capitalize
     @id = @@words.length + 1
     @word_definition = []
   end
@@ -18,6 +18,12 @@ class Word
 
   def self.all
     @@words
+  end
+
+  def self.sort_word
+    @@words.sort! do |a, b|
+      a.word_name <=> b.word_name
+    end
   end
 
   def save

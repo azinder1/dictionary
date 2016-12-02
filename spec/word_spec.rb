@@ -6,11 +6,14 @@ require('word')
 describe(Word) do
   before() do
     Word.clear()
-    @word1 = Word.new(:word_name => 'Bananza')
+    @word1 = Word.new(:word_name => 'bananza')
     @word1.save()
 
-    @word2 = Word.new(:word_name => 'Quixotic')
+    @word2 = Word.new(:word_name => 'quixotic')
     @word2.save()
+
+    @word3 = Word.new(:word_name => 'Apple')
+    @word3.save()
   end
 
   describe('#initialize') do
@@ -29,6 +32,13 @@ describe(Word) do
       test_definition.save()
       @word1.add_word_definition(test_definition)
       expect(@word1.word_definition()).to eq([test_definition])
+    end
+  end
+  describe('#sort_word') do
+    it('Can sort words in alphabetical order and capilize them') do
+
+      Word.sort_word()
+      expect(Word.all()).to eq([@word3, @word1, @word2])
     end
   end
 end
