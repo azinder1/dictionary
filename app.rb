@@ -50,3 +50,9 @@ post('/word/:id/definition/new') do
   @definition = Definition.all()
   erb(:word)
 end
+
+get('/sort/words') do
+  Word.sort_word()
+  @words = Word.all()
+  erb(:index)
+end

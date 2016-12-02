@@ -1,7 +1,7 @@
 <a href="/">Home</a>
 
 <div class="word_info">
-  <h4><%=@word.word_name()%>:</h4>
+  <h2><%=@word.word_name()%>:</h2>
   <ol>
 
     <% @word.word_definition. each() do |definition| %>
@@ -9,8 +9,5 @@
     <%end %>
 
   </ol>
-<p><a href="/word/<%= @word.id() %>/definition/new">Add Definition</a></p>
+<p><a class="btn btn-primary" href="/word/<%= @word.id() %>/definition/new">Add Definition</a></p>
 </div>
-
-
-<ul>

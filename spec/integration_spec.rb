@@ -53,4 +53,9 @@ describe('the home path', {:type => :feature}) do
     click_button('Submit')
     expect(page).to have_content("Party! Party! Party!")
   end
+  # it('can uppercase and sort words') do <====Couldn't find method to check page with same content
+  #   visit('/')
+  #   click_link('Sort your words')
+  #   expect(page).to have_content('')
+  # end
 end
